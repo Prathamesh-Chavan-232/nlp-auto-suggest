@@ -1,0 +1,62 @@
+.app {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+
+body {
+	background-color: #262a2f;
+	color: #333;
+}
+
+::placeholder {
+	color: #555;
+}
+
+.autocomplete {
+	width: 600px;
+	background-color: #fff;
+	margin: 200px auto;
+	border-radius: 5px;
+}
+
+.row {
+	display: flex;
+	align-items: center;
+	padding: 10px;
+}
+
+.row input {
+	flex: 1;
+	height: 50px;
+	background: transparent;
+	border: 0;
+	outline: 0;
+	font-size: 18px;
+}
+
+button {
+	background: transparent;
+	border: 0;
+	outline: 0;
+}
+
+.search-icon {
+	width: 25px;
+	color: #555;
+	font-size: 22px;
+	cursor: pointer;
+}
+
+.results ul {
+	border-top: 1px solid #999;
+	padding: 15px 10px;
+}
+
+.results ul li {
+	list-style: none;
+	border-radius: 3px;
+	padding: 15px 10px;
+	cursor: pointer;
+}
