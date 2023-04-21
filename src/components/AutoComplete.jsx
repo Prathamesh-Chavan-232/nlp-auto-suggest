@@ -20,11 +20,6 @@ const AutoComplete = ({ data }) => {
 			setSuggestionsActive(false);
 		}
 	};
-	const handleClick = (e) => {
-		setSuggestions([]);
-		setValue(e.target.innerText);
-		setSuggestionsActive(false);
-	};
 	const handleKeyDown = (e) => {
 		// UP ARROW
 		if (e.keyCode === 38) {
@@ -46,25 +41,6 @@ const AutoComplete = ({ data }) => {
 			setSuggestionIndex(0);
 			setSuggestionsActive(false);
 		}
-	};
-	const Suggestions = () => {
-		return (
-			<div className="results">
-				<ul className="suggestions">
-					{suggestions.map((suggestion, index) => {
-						return (
-							<li
-								className={index === suggestionIndex ? "active" : ""}
-								key={index}
-								onClick={handleClick}
-							>
-								{suggestion}
-							</li>
-						);
-					})}
-				</ul>
-			</div>
-		);
 	};
 
 	return (

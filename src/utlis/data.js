@@ -2,7 +2,7 @@ export const autoCompleteData = [
 	"Asparagus",
 	"Beetroot",
 	"Broccoli",
-	"Cabbage Cucumber blah bhla",
+	"Cabbage",
 	"Carrot",
 	"Cauliflower",
 	"Celery",
