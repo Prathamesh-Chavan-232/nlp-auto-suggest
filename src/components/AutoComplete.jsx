@@ -1,12 +1,17 @@
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-
 const AutoComplete = ({ data }) => {
 	const [suggestions, setSuggestions] = useState([]);
 	const [suggestionIndex, setSuggestionIndex] = useState(0);
 	const [suggestionsActive, setSuggestionsActive] = useState(false);
 	const [value, setValue] = useState("");
+
+	const handleClick = (e) => {
+		setSuggestions([]);
+		setValue(e.target.innerText);
+		setSuggestionsActive(false);
+	};
 	const handleChange = (e) => {
 		const query = e.target.value.toLowerCase();
 		setValue(query);
@@ -41,6 +46,26 @@ const AutoComplete = ({ data }) => {
 			setSuggestionIndex(0);
 			setSuggestionsActive(false);
 		}
+	};
+
+	const Suggestions = () => {
+		return (
+			<div className="results">
+				<ul className="suggestions">
+					{suggestions.map((suggestion, index) => {
+						return (
+							<li
+								className={index === suggestionIndex ? "active" : ""}
+								key={index}
+								onClick={handleClick}
+							>
+								{suggestion}
+							</li>
+						);
+					})}
+				</ul>
+			</div>
+		);
 	};
 
 	return (
